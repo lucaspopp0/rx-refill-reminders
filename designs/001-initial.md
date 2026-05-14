@@ -33,6 +33,8 @@ to avoid missing a prescription.
     1. Create next rx + schedule reminders
 3. User postpones reminder to request refill
     1. Update reminder time?
+4. User ignores reminder to request refill
+    1. No backend action - next reminder should already be there
 
 ### Entities
 
@@ -51,8 +53,17 @@ to avoid missing a prescription.
     * Picked up?
 * Reminder
     * UUID
-    * Initial timestamp
+    * Timestamp
     * Next timestamp
+
+
+Reminder: timestamp, giveUpTimestamp, type, state
+* timestamp
+* giveUpTimestamp
+* done
+* gaveUp
+
+Execute a step function every hour, to send out all necessary reminders and update them as needed
 
 ### Architecture
 
