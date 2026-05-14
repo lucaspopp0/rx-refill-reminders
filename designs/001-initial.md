@@ -24,3 +24,21 @@ to avoid missing a prescription.
     2. API gateway
     3. DynamoDB storage
     4. SNS notifications
+
+### Essential Pieces
+
+1. DNS
+    1. Route53 domain
+    2. Route53 hosted zones
+    3. Route53 subdomains
+
+2. User management
+    1. Cognito user pool
+    2. DynamoDB table for user metadata
+    3. Various lambda triggers, at least post-confirmation
+
+3. API
+    1. API gateway for receiving requests
+    2. Lambda for handling requests
+    3. Authorizer connected to Cognito
+    4. DynamoDB tables for resource storage
