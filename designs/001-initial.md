@@ -16,6 +16,44 @@ The general process is like so:
 The goal is to create an iOS app with an AWS backend, which provides reminders throughout the process
 to avoid missing a prescription.
 
+### Basic User flow
+
+1. Pickup
+    1. Remind me to request the next refill (prescriber) - provide next refill date?
+        1. Repeat until marked complete
+2. Reminder to request the pharmacy to fill
+3. Reminder to pickup (based on pickup date + refill interval)
+4. Wait for user to mark picked up
+
+### Interactions
+
+1. User creates rx cycle
+    1. Create next rx + schedule reminders
+2. User picks up rx
+    1. Create next rx + schedule reminders
+3. User postpones reminder to request refill
+    1. Update reminder time?
+
+### Entities
+
+* User
+    * UUID
+    * Name
+* Rx Cycle
+    * UUID
+    * Name
+    * Refill interval
+    * Pharmacy fill advance days
+* Rx Cycle Instance
+    * UUID
+    * Refill requested?
+    * Fill requested?
+    * Picked up?
+* Reminder
+    * UUID
+    * Initial timestamp
+    * Next timestamp
+
 ### Architecture
 
 1. iOS frontend
