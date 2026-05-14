@@ -12,7 +12,7 @@ import SwiftData
 struct Rx_Refill_RemindersApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            RxCycle.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +25,7 @@ struct Rx_Refill_RemindersApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ListView()
         }
         .modelContainer(sharedModelContainer)
     }
